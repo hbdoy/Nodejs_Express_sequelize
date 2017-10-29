@@ -1,5 +1,5 @@
 # Nodejs_Express_sequelize
-使用Nodejs透過ORM方式實作記帳工具(CRUD)
+使用 Nodejs 透過 ORM 方式實作記帳系統，滿足 CRUD
 
 ## 使用
 ```
