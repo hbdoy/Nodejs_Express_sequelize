@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">記帳囉</a>
+      <div class="ml-auto my-2 my-lg-0">
+        <a href="/accounts/create">
+          <button class="btn btn-outline-success my-2 my-sm-0">新增消費</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">記下生活中的花費</h1>
+        <p>養成好習慣，做自己錢包的主人</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-hover">
+            <tr>
+              <th>消費內容</th>
+              <th>類型</th>
+              <th>金額</th>
+              <th>更改</th>
+              <th>刪除</th>
+            </tr>
+            <% for(var i = 0; i < accounts.length; i++){ %>
+              <tr>
+                <td><a href="accounts/<%= accounts[i].id %>"><%= accounts[i].title %></a></td>
+                <td><%= accounts[i].type %></td>
+                <td><%= accounts[i].cost %></td>
+                <td>
+                  <a href="accounts/<%= accounts[i].id %>/update" class="btn btn-warning">更新</a>
+                </td>
+                <td>
+                  <!-- 刪除採取 post 較為安全一點 -->
+                  <form method="post" action="accounts/<%= accounts[i].id %>/delete">
+                    <button class="btn btn-danger" type="submit">刪除</button>
+                  </form>
+                </td>
+              </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container mt-5">
+    <hr>
+    <p>&copy; Company 2017</p>
+  </footer>
+</body>
+
+</html>

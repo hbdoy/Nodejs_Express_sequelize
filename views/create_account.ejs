@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>記帳囉</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">記帳囉</a>
+            <div class="ml-auto my-2 my-lg-0">
+                <a href="/accounts/create">
+                  <button class="btn btn-outline-success my-2 my-sm-0">新增消費</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>新增消費</h2>
+                <form method="POST" action="/accounts/create">
+                    <input class="mb-3 form-control" type="text" name="title" placeholder="請輸入消費名稱">
+                    <select class="mb-3 form-control" name="type">
+                        <option value="eat">食</option>
+                        <option value="cloth">衣</option>
+                        <option value="home">住</option>
+                        <option value="traffic">行</option>
+                        <option value="play">育樂</option>
+                    </select>
+                    <input class="mb-3 form-control" type="number" name="cost" placeholder="請輸入消費金額">
+                    <div class="text-right">
+                        <button class="btn btn-primary" type="submit">送出</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <hr>
+        <p>&copy; Company 2017</p>
+    </footer>
+</body>
+
+</html>
